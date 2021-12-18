@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+._table {
+  text-align: center;
+  margin: 10px;
+}
+h1 {
+  color: #572357;
+}
+.text_input {
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  border: 1px solid #1a634d;
+  height: 20px;
+  width: 200px;
+}
+.button_input {
+  height: 30px;
+  width: 100px;
+  background-color: #245a78;
+  border: 1px solid #a82786;
+  color: white;
+}
+.button_input:hover {
+  background-color: #732770;
+}
+.container {
+  margin: 100px;
+}

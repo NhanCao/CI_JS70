@@ -4,7 +4,7 @@ function checkNumber() {
   let container = document.getElementById("container");
   let num01Temp = parseInt(num01.value);
   let num02Temp = parseInt(num02.value);
-  let output = 0;
+  let output = "";
   /*Kiểm tra xem số nhập vào hợp lệ không*/
   if (num01.value.length == 0 || num02.value.length == 0) {
     alert("Vui lòng nhập vào số cần tìm");
@@ -44,16 +44,21 @@ function checkNumber() {
       }
     } else {
       for (let i = num01Temp; i <= num01Temp; i++) {
-        if (num01Temp % 2 != 0) {
-          output += i + " ";
+        let flag = 0;
+        for (let j = 2; j < num01Temp; j++) {
+          if (i % j == 0) {
+            flag++;
+          }
+        }
+        if (flag == 0) {
+          output += num01Temp;
         } else {
-          output = "Số bạn nhập không phải số nguyên tố";
+          output = "Số " + num01Temp + " không phải là số nguyên tố";
         }
       }
     }
   }
-  container.innerHTML =
-    "Số nguyên tố cần tìm là :" + output.toString().replace("0", "");
+  container.innerHTML = "Số nguyên tố cần tìm là :" + output.toString();
 }
 function Clear() {
   document.getElementById("number01").value = null;

@@ -11,8 +11,8 @@ function checkNumber() {
     return false;
   } else if (isNaN(num01.value) || isNaN(num02.value)) {
     alert("Vui lòng nhập đúng giá trị");
-    row.value = null;
-    column.value = null;
+    num01.value = null;
+    num02.value = null;
     return false;
   } else if (num01Temp <= 1 || num02Temp <= 1) {
     alert("Vui lòng nhập đúng giá trị");
@@ -53,7 +53,9 @@ function checkNumber() {
         if (flag == 0) {
           output += num01Temp;
         } else {
-          output = "Số " + num01Temp + " không phải là số nguyên tố";
+          container.innerHTML =
+            "Số " + num01Temp + " không phải là số nguyên tố";
+          return;
         }
       }
     }

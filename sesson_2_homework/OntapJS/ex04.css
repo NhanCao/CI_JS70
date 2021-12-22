@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  height: 120px;
+  width: 500px;
+  background-color: chocolate;
+  margin-top: 50px;
+  margin-left: 400px;
+  margin-right: 400px;
+  color: white;
+  font-weight: bold;
+}

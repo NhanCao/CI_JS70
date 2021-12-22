@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.calculator {
+  text-align: center;
+  margin: 10px;
+}
+h1 {
+  color: #572357;
+}
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-width: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+.text_input {
+  padding: 5px;
+  margin: 2px;
+  border-radius: 3px;
+  border: 1px solid #1a634d;
+  height: 20px;
+  width: 200px;
+  font-weight: lighter;
+  font-size: 16px;
+}
+.text_input:hover {
+  background-color: #e6e6fa;
+}
+.button-cal-plus {
+  font-size: 20px;
+  background-color: #20b2aa;
+}
+.button-cal-plus:hover {
+  background-color: #00ced1;
+}
+.button-cal-minus {
+  font-size: 20px;
+  background-color: #ffa500;
+}
+.button-cal-minus:hover {
+  background-color: #f4a460;
+}
+.button-cal-multi {
+  font-size: 20px;
+  background-color: #f08080;
+}
+.button-cal-multi:hover {
+  background-color: #ff6347;
+}
+.button-cal-divide {
+  font-size: 20px;
+  background-color: #7d93e0;
+}
+.button-cal-divide:hover {
+  background-color: #1e90ff;
+}
+.container {
+  text-align: center;
+  font-size: 16px;
+  color: #4b0082;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  color: black;
+}

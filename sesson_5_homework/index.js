@@ -1,10 +1,31 @@
 import Register from "./SignUp/signUp.js";
 import LoginUser from "./Login/login.js";
 import CheckEmailScreen from "./CheckEmail/index.js";
+import MainScreen from "./Main/index.js";
+import InfoScreen from "./info/index.js";
 
 class App {
   $activeScreen;
-  constructor() {}
+  constructor() {
+    this.setUpAuthListener();
+  }
+  setUpAuthListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      let screen;
+      let titleScreen;
+      if (user && user.emailVerified) {
+        screen = new InfoScreen();
+        titleScreen = "Main Screen";
+      } else if (user && !user.emailVerified) {
+        screen = new CheckEmailScreen();
+        titleScreen = "Check Email";
+      } else {
+        screen = new LoginUser();
+        titleScreen = "Login";
+      }
+      this.changeActiveScreen(screen, titleScreen);
+    });
+  }
   changeActiveScreen(screen, title) {
     const appElement = document.getElementById("app");
     if (appElement) {
@@ -13,12 +34,9 @@ class App {
       }
       this.$activeScreen = screen;
       document.title = title; //thay doi title theo tung screen
-      appElement.appendChild(screen.Render());
+      screen.Render(appElement);
     }
   }
 }
 const app = new App();
-const siginUp = new Register();
-const checkEmail = new CheckEmailScreen();
-app.changeActiveScreen(siginUp, "Register");
 export default app;

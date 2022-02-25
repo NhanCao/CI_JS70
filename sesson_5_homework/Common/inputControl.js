@@ -30,6 +30,12 @@ class InputControl {
   clearInputValue = (value) => {
     this.$Input.value = value;
   };
+  setAttribute = (name, value) => {
+    this.$Input.setAttribute(name, value);
+  };
+  setEventListener = (nameEvt, callbackFunc) => {
+    this.$Input.addEventListener(nameEvt, callbackFunc);
+  };
   setErrorMsg = (errorMess) => {
     if (errorMess) {
       this.$ErrorMsg.innerHTML = "*" + errorMess;

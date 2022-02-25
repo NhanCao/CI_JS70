@@ -32,8 +32,8 @@ class CheckEmailScreen {
     </div>
     `;
   }
-  Render() {
-    return this.$mainContainer;
+  Render(appEle) {
+    appEle.appendChild(this.$mainContainer);
   }
 }
 export default CheckEmailScreen;

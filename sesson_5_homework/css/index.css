@@ -95,3 +95,52 @@ a {
     transform: rotate(360deg);
   }
 }
+.info-screen {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#7b68ee, #87cefa, #4b0082);
+}
+.paper {
+  width: 500px;
+  height: 450px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  margin-bottom: 20px;
+  margin-left: 100px;
+  color: #800080;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.formInfo {
+  flex-grow: 1;
+}
+.avatar-container {
+  width: 30%;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  border: solid 1px tomato;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

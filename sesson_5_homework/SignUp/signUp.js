@@ -112,7 +112,7 @@ class Register {
     this.$password.clearInputValue(null);
     this.$confimPassword.clearInputValue(null);
   };
-  Render() {
+  Render(appEle) {
     this.$formRegister.append(
       this.$title,
       this.$userName.Render(),
@@ -124,7 +124,7 @@ class Register {
       this.$link
     );
     this.$container.append(this.$formRegister);
-    return this.$container;
+    appEle.appendChild(this.$container);
   }
 }
 export default Register;

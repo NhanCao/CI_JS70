@@ -2,6 +2,7 @@ import InputControl from "../Common/inputControl.js";
 import Register from "../SignUp/signUp.js";
 import app from "../index.js";
 import { loginWithEmailPass } from "../firebase/auth.js";
+import MainScreen from "../Main/index.js";
 class LoginUser {
   $container;
   $title;
@@ -39,7 +40,7 @@ class LoginUser {
     this.$span = document.createElement("span");
     this.$span.innerHTML = "Not a member? ";
   }
-  handleSubmit = (evt) => {
+  handleSubmit = async (evt) => {
     evt.preventDefault();
 
     //lay giá trị nhập từ Input vào
@@ -68,7 +69,9 @@ class LoginUser {
       return;
     }
     alert("Đăng nhập thành công!");
-    loginWithEmailPass(email, pass);
+    const userLogin = await loginWithEmailPass(email, pass);
+    const mainscreeen = new MainScreen();
+    app.changeActiveScreen(mainscreeen, "Main Screen");
     this.clearForm();
   };
   handleChangeScreen = (e) => {
@@ -82,7 +85,7 @@ class LoginUser {
     this.$password.clearInputValue(null);
   };
 
-  Render() {
+  Render(appEle) {
     this.$formRegister.append(
       this.$title,
       this.$email.Render(),
@@ -92,7 +95,7 @@ class LoginUser {
       this.$link
     );
     this.$container.append(this.$formRegister);
-    return this.$container;
+    appEle.appendChild(this.$container);
   }
 }
 export default LoginUser;

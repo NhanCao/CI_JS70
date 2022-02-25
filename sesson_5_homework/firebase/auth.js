@@ -21,21 +21,16 @@ const createNewAccout = (email, password) => {
     });
 };
 
-const loginWithEmailPass = (email, password) => {
-  firebase
+const loginWithEmailPass = async (email, password) => {
+  const userCredential = await firebase
     .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      let user = userCredential.user;
-      console.log(user);
-      // ...
-    })
-    .catch((error) => {
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      _noti.error(errorCode, errorMessage);
-    });
+    .signInWithEmailAndPassword(email, password);
+  let user = userCredential.user;
+  localStorage.setItem("emailLogined", user.email);
+  localStorage.setItem("uid", user.uid);
+};
+const getCurrentUser = () => {
+  return firebase.auth().currentUser;
 };
 
-export { createNewAccout, loginWithEmailPass };
+export { createNewAccout, loginWithEmailPass, getCurrentUser };
